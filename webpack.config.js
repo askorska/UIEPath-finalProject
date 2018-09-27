@@ -16,9 +16,6 @@ const appHtmlTitle = 'FinalProject';
  */
 module.exports = {
     entry: {
-        vendor: [
-            'lodash'
-        ],
         bundle: path.join(dirApp, 'index')
     },
     resolve: {
@@ -34,9 +31,18 @@ module.exports = {
         }),
 
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'index.ejs'),
+            filename: 'main.html',
+            template: path.join(__dirname, 'app/pages/main.html'),
+            title: appHtmlTitle
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'product.html',
+            template: path.join(__dirname, 'app/pages/product.html'),
             title: appHtmlTitle
         })
+
+
+
     ],
     module: {
         rules: [

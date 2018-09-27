@@ -1,0 +1,27 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body  {
+    background: url("../images/bg.jpg");
+}
+.wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+
+}
+
+.container {
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+.container--pagecontent {
+    background-color: rgba(0,0,0,0.35);
+    height: 100%;
+
+}
