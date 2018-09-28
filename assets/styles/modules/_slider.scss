@@ -1,0 +1,40 @@
+.slide {
+
+    transition: opacity 1s ease-out;
+    opacity: 0;
+    height: 0;
+
+    &--curr {
+
+        opacity: 1;
+        height: auto;
+    }
+}
+
+.slider {
+    position: relative;
+    &__prev {
+        position: absolute;
+        left: 0;
+        width: 100px;
+        height: 100%;
+        top: 0;
+        background: url("../images/arrow.svg") 50% no-repeat;
+        cursor: pointer;
+        opacity: 0.1;
+        transition: opacity 0.2s ease-in;
+
+        &:hover {
+            opacity: 1;
+        }
+
+    }
+
+    &__next {
+        @extend .slider__prev;
+        right: 0;
+        left: auto;
+        transform: scaleX(-1);
+
+    }
+}
