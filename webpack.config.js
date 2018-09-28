@@ -39,6 +39,12 @@ module.exports = {
             filename: 'product.html',
             template: path.join(__dirname, 'app/pages/product.html'),
             title: appHtmlTitle
+        }),
+
+        new HtmlWebpackPlugin({
+            filename: 'product-slider.html',
+            template: path.join(__dirname, 'app/pages/product-slider.html'),
+            title: appHtmlTitle
         })
 
 
