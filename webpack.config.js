@@ -16,6 +16,9 @@ const appHtmlTitle = 'FinalProject';
  */
 module.exports = {
     entry: {
+        vendor: [
+            'rangeable'
+        ],
         bundle: path.join(dirApp, 'index')
     },
     resolve: {
@@ -44,6 +47,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'product-slider.html',
             template: path.join(__dirname, 'app/pages/product-slider.html'),
+            title: appHtmlTitle
+        }),
+
+        new HtmlWebpackPlugin({
+            filename: 'sample.html',
+            template: path.join(__dirname, 'app/pages/sample.html'),
             title: appHtmlTitle
         })
 

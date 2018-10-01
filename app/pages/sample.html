@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrapper">
+    ${require('../components/header.html')}
+    <div class="content">
+        <div class="container container--pagecontent">
+            <div style="background: #ffffff; min-height: 300px;">
+
+                <div class="form__control" style="width: 50%">
+                    <div class="range">
+                        <input name="range1" type="range" id="range1">
+                    </div>
+                </div>
+                <div class="form__control">
+                    Two
+                <label class="switch">
+                    <input type="checkbox" class="switch__checkbox">
+                    <span class="switch__slider"></span>
+                </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    ${require('../components/footer.html')}
+</div>
+</body>
+</html>
+
