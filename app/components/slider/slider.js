@@ -1,10 +1,9 @@
 class Slider {
 
-    constructor(containerSelector) {
+    constructor(containerSelector, startAt = 0) {
         this.container = document.querySelector(containerSelector);
         this.container.classList.add('slider');
-        this.slides;
-        this.currentSlideIndex = 0;
+        this.currentSlideIndex = startAt;
 
 
     }
@@ -25,47 +24,36 @@ class Slider {
         this.currentSlide = this.slides[index];
         this.currentSlide.classList.add("slide--curr");
     }
+
     changeCurrSlide(num) {
         this.currentSlideIndex += num;
-        if (this.currentSlideIndex < this.slides.length - 2 && this.currentSlideIndex > 0) {
-            this.setCurrSlide(this.currentSlideIndex)
-        }
-        else if (this.currentSlideIndex < 0) {
-            this.currentSlideIndex = this.slides.length - 3;
-            this.currentSlide.classList.remove("slide--curr");
-            this.setCurrSlide(this.slides.length - 3);
-        }
-        else {
+
+        if (this.currentSlideIndex >= this.slides.length - 2) {
             this.currentSlideIndex = 0;
-            this.currentSlide.classList.remove("slide--curr");
-            this.setCurrSlide(0);
         }
 
-
-    }
-
-    makeControls() {
-        const next = document.createElement('a');
-        const prev = document.createElement('a');
-        next.classList.add('slider__next');
-        prev.classList.add('slider__prev');
-        this.container.appendChild(next);
-        this.container.appendChild(prev);
-        next.addEventListener('click', () => {
-            this.changeCurrSlide(1);
-        });
-        prev.addEventListener('click', () => {
-            this.changeCurrSlide(-1);
-        });
+        else if (this.currentSlideIndex < 0) {
+            this.currentSlideIndex = this.slides.length - 3
+        }
+        this.setCurrSlide(this.currentSlideIndex);
 
 
     }
 
+    makeControl(tagName, className, step) {
+        const element = document.createElement(tagName);
+        element.classList.add(className);
+        this.container.appendChild(element);
+        element.addEventListener('click', () => {
+            this.changeCurrSlide(step);
+        });
+    }
 
-    start() {
+    init() {
         this.makeSlides();
-        this.setCurrSlide(0);
-        this.makeControls();
+        this.setCurrSlide(this.currentSlideIndex);
+        this.makeControl("a", "slider__next", 1);
+        this.makeControl("a", "slider__prev", -1);
     }
 
 }

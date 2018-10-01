@@ -10,7 +10,6 @@ import 'styles/index.scss';
 // ===============================
 import Slider from 'components/slider/slider'
 //
- console.log('test');
 //
-let slider = new Slider('.product__slider');
-slider.start();
+let slider = new Slider('.product__slider', 1);
+slider.init();
