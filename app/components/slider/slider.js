@@ -5,7 +5,6 @@ class Slider {
         this.container.classList.add('slider');
         this.currentSlideIndex = startAt;
 
-
     }
 
     makeSlides() {
