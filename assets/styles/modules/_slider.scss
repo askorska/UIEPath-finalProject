@@ -12,13 +12,16 @@
 }
 
 .slider {
-    position: relative;
+    &__parent {
+        position: relative;
+    }
+
     &__prev {
         position: absolute;
         left: 0;
         width: 100px;
-        height: 100%;
-        top: 0;
+        height: 100px;
+        bottom: calc(50% - 50px);
         background: url("../images/arrow.svg") 50% no-repeat;
         cursor: pointer;
         opacity: 0.1;

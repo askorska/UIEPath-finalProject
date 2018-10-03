@@ -30,8 +30,7 @@ if (document.querySelector('.product__gallery')) {
     slider.init();
 }
 
-const zoom = new Zoom("#myimage", "#myresult", 40);
-zoom.init();
+
 
 
 

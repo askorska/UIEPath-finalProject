@@ -1,29 +1,7 @@
-<style>
-    .img-zoom-container {
-        position: relative;
-    }
 
-    .img-zoom-lens {
-        position: absolute;
-        border: 1px solid #d4d4d4;
-        /*set the size of the lens:*/
-    //width: 40px;
-    //height: 40px;
-        pointer-events: none;
-    }
-
-    .img-zoom-result {
-        border: 1px solid #d4d4d4;
-        /*set the size of the result div:*/
-        width: 300px;
-        height: 300px;
-        background-repeat: no-repeat;
-    }
-
-</style>
 <div class="product product--single">
     <figure class="product__figure">
-        <img class="product__img u-responsiveImg" src="../../assets/images/1.jpg" alt="" >
+        <img class="product__img u-responsiveImg" src="../../assets/images/1.jpg" alt="" id="myimage">
     </figure>
 
     <div class="product__details">
@@ -43,7 +21,4 @@
     </div>
 </div>
 
-<div class="img-zoom-container">
-    <img id="myimage" src="../../assets/images/1.jpg"  width="300" height="240" alt="">
-    <div id="myresult" class="img-zoom-result"></div>
-</div>
+

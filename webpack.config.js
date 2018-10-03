@@ -10,6 +10,7 @@ const dirApp = path.join(__dirname, 'app');
 const dirAssets = path.join(__dirname, 'assets');
 
 const appHtmlTitle = 'FinalProject';
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 /**
  * Webpack Configuration
@@ -31,6 +32,12 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
             IS_DEV: IS_DEV
+        }),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: "[name].css",
+            chunkFilename: "[id].css"
         }),
 
         new HtmlWebpackPlugin({
@@ -75,32 +82,43 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    'style-loader',
                     {
-                        loader: 'css-loader',
+                        loader: MiniCssExtractPlugin.loader,
                         options: {
-                            sourceMap: IS_DEV
+                            // you can specify a publicPath here
+                            // by default it use publicPath in webpackOptions.output
+                            publicPath: '../'
                         }
                     },
+                    "css-loader"
                 ]
             },
 
             // CSS / SASS
             {
-                test: /\.scss/,
+                test: /\.(css|sass|scss)$/,
                 use: [
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
-                            sourceMap: IS_DEV
+                            importLoaders: 2,
+                            sourceMap: true
                         }
                     },
+                    // {
+                    //     loader: 'postcss-loader',
+                    //     options: {
+                    //         plugins: () => [
+                    //             require('autoprefixer')
+                    //         ],
+                    //         sourceMap: true
+                    //     }
+                    // },
                     {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: IS_DEV,
-                            includePaths: [dirAssets]
+                            sourceMap: true
                         }
                     }
                 ]
