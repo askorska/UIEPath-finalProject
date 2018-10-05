@@ -1,4 +1,5 @@
-import Zoom from 'components/zoom'
+import Zoom from 'components/slider/zoom'
+import Watermark from 'components/slider/watermark'
 class Slider {
 
     constructor(containerSelector, startAt = 0) {
@@ -10,16 +11,21 @@ class Slider {
     }
 
     makeSlides() {
+        const watermark = new Watermark();
         this.slides = this.container.children;
         for (let i = 0; i < this.slides.length; i++) {
             this.slides[i].classList.add("slide");
+            watermark.addWatermark(this.slides[i].firstElementChild);
 
         }
 
     }
 
+
+
     addZoom() {
-        this.zoom = new Zoom(this.slides[this.currentSlideIndex], 75, this.parent);
+        let img = this.getCurrImg();
+        this.zoom = new Zoom(img, 75, this.parent);
         this.zoom.init();
     }
 
@@ -31,10 +37,14 @@ class Slider {
         this.currentSlide.classList.add("slide--curr");
     }
 
+    getCurrImg() {
+        return this.currentSlide.firstElementChild;
+    }
+
     changeCurrSlide(num) {
         this.currentSlideIndex += num;
 
-        if (this.currentSlideIndex >= this.slides.length - 1) {
+        if (this.currentSlideIndex > this.slides.length - 1) {
             this.currentSlideIndex = 0;
         }
 
@@ -42,7 +52,7 @@ class Slider {
             this.currentSlideIndex = this.slides.length - 2
         }
         this.setCurrSlide(this.currentSlideIndex);
-        this.zoom.updateImg(this.slides[this.currentSlideIndex]);
+        this.zoom.updateImg(this.getCurrImg());
 
 
     }

@@ -10,7 +10,6 @@ import 'styles/index.scss';
 // ===============================
 import Slider from 'components/slider/slider'
 import Rangeable from 'rangeable'
-import Zoom from 'components/zoom'
 
 if (document.querySelector('#range1')) {
     const rangeable = new Rangeable('#range1', {
