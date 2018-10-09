@@ -22,8 +22,11 @@ class Slider {
 
     addZoom() {
         let img = this.getCurrImg();
-        this.zoom = new Zoom(img, 75, this.parent);
-        this.zoom.init();
+        img.onload = ()=> {
+            this.zoom = new Zoom(img, 75, this.parent);
+            this.zoom.init();
+        }
+
     }
 
     setCurrSlide(index) {

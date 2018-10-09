@@ -11,6 +11,8 @@
     text-align: center;
     -webkit-appearance: none;
     -moz-appearance: none;
+    outline: none;
+    border: none;
 
     &--primary {
         background: linear-gradient(180deg, #2BBCC2 0%, #1B745F 100%);

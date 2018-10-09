@@ -19,6 +19,7 @@ class Zoom {
 
     moveLens(e, el) {
         let a = el.getBoundingClientRect();
+        console.log(a);
         let x = e.pageX - a.left;
         let y = e.pageY - a.top;
         x = x - window.pageXOffset;

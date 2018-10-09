@@ -1,0 +1,39 @@
+<div class="review">
+    <h2 class="review__header">Add Review</h2>
+    <div class="review__preview">
+        <div class="review__headline">By <span class="review__username">Your Name</span> <span
+            class="review__date"></span></div>
+        <div class="review__avatar"></div>
+        <div class="review__text"><span class="review__textPlaceholder">Start typing and your review text will appear here...</span></div>
+
+    </div>
+    <div class="review__editor">
+        <div class="review__left">
+            <div class="form__group">
+                <label for="usernameInput">Enter your name</label>
+                <input id="usernameInput" type="text" class="form__input">
+            </div>
+            <div class="form__group">
+                <label for="avatarInput">Choose your avatar</label>
+                <input id="avatarInput" type="file" class="form__input">
+            </div>
+
+        </div>
+        <div class="review__right">
+            <h5>Write your review</h5>
+
+            <div class="review__textinput" contenteditable="true"></div>
+            <div class="review__buttons">
+                <div class="review__buttonsEditorial">
+                    <button class="button button--secondary" data-command="bold">Bold</button>
+                    <button class="button button--secondary" data-command="italic">Emphasize</button>
+                    <button class="button button--secondary" data-command="blockquote">Quote</button>
+                </div>
+                <button class="button button--secondary">Cancel</button>
+                <button class="button button--primary">Add Review</button>
+
+            </div>
+        </div>
+    </div>
+
+</div>

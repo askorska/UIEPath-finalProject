@@ -58,10 +58,12 @@ module.exports = {
         }),
 
         new HtmlWebpackPlugin({
-            filename: 'sample.html',
-            template: path.join(__dirname, 'app/pages/sample.html'),
+            filename: 'product-review.html',
+            template: path.join(__dirname, 'app/pages/product-review.html'),
             title: appHtmlTitle
         })
+
+
 
 
 

@@ -16,6 +16,7 @@
         position: absolute;
         width: 100%;
         font-size: 0;
+        pointer-events:none;
 
         span {
             display: inline-block;
@@ -34,6 +35,8 @@
 
     &__details {
         padding: 20px;
+        display: grid;
+        grid-template-rows: 1fr auto;
 
         p {
             margin-bottom: 16px;
