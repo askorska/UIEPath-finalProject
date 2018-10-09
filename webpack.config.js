@@ -70,12 +70,15 @@ module.exports = {
         rules: [
             // BABEL
             {
+                enforce: "pre",
                 test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /(node_modules)/,
-                options: {
-                    compact: true
-                }
+                exclude: /node_modules/,
+                loader: "eslint-loader",
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "babel-loader",
             },
 
             // STYLES

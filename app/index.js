@@ -28,8 +28,3 @@ if (document.querySelector('.product__gallery')) {
     const slider = new Slider('.product__gallery', 1);
     slider.init();
 }
-
-
-
-
-

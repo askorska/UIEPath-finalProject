@@ -16,12 +16,9 @@ class Slider {
         for (let i = 0; i < this.slides.length; i++) {
             this.slides[i].classList.add("slide");
             watermark.addWatermark(this.slides[i].firstElementChild);
-
         }
 
     }
-
-
 
     addZoom() {
         let img = this.getCurrImg();
