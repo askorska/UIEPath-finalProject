@@ -11,6 +11,8 @@ import 'styles/index.scss';
 import Slider from 'components/slider/slider'
 import Rangeable from 'rangeable'
 import addComment from 'components/addComent/addComment'
+import visibility from 'components/visibilityToggler/visibilityToggler'
+import Rating from 'components/addComent/rating'
 
 if (document.querySelector('#range1')) {
     const rangeable = new Rangeable('#range1', {
@@ -30,10 +32,18 @@ if (document.querySelector('.product__gallery')) {
     slider.init();
 }
 
+let review = document.querySelector('.review');
+if (review) {
+    let comments;
+    review.querySelector('.review__toggler').addEventListener('click' , (e) => {
+        if (!comments) {
+            comments = new addComment('.review__container');
+            comments.init();
+        }
+        visibility.show(review.querySelector('.review__container'));
+        visibility.hide(e.target.parentNode);
+    });
 
-if (document.querySelector('.review')) {
-    const comments = new addComment('.review__buttonsEditorial', '.review__textinput', '.review__text', '.review__date', '#usernameInput', '.review__username');
-    comments.init();
 }
 
 

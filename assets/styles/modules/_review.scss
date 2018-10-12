@@ -1,5 +1,18 @@
 .review {
-    margin-top: 76px;
+    margin-top: 28px;
+    &__intro {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 28px;
+        span:not(.u-is-hidden) + span {
+            display: none;
+        }
+    }
+    &__toggler {
+        color: $yellow;
+        text-decoration: underline;
+        cursor: pointer;
+    }
     &__header {
         font-size: 24px;
         font-weight: bold;
@@ -15,7 +28,6 @@
         display: grid;
         grid-template-columns: 75px auto;
         grid-column-gap: 30px;
-
 
     }
     &__headline {
@@ -33,6 +45,15 @@
         width: 77px;
         background: #000;
 
+        img {
+
+            width: 77px;
+            height: 77px;
+        }
+
+    }
+    &__ratingOutput {
+        float: right;
     }
     &__text {
         color: #fff;
@@ -75,6 +96,10 @@
         font-style: italic;
 
     }
+    &__rate {
+        float: right;
+    }
+
     &__editor {
         background: url("../images/modal-bg.png");
         border: 3px solid #3FC5CB;
@@ -82,6 +107,66 @@
         display: grid;
         grid-template-columns: 260px auto;
         grid-column-gap: 20px;
+
+    }
+    &__legend {
+        grid-column: span 2;
+        text-align: center;
+        span {
+            background: #fff;
+            display: inline-block;
+            border-radius: 15px;
+            padding: 8px 16px;
+            border: 3px solid #3FC5CB;
+            position:relative;
+            top:-35px;
+            text-transform: uppercase;
+
+        }
+
+    }
+
+    &__left {
+        grid-column: span 1;
+    }
+    &__right {
+        grid-column: span 1;
+    }
+
+    &__avatarInput {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+
+        & + label {
+            @extend .form__input;
+            height: 100px;
+            padding: 13px;
+            font-style: italic;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            cursor: pointer;
+            img {
+                width: 70px;
+                height: 70px;
+                box-sizing: border-box;
+                border-radius: 5px;
+                vertical-align: middle;
+                margin-left: 13px;
+
+                &.is-empty {
+                    opacity: 0.2;
+                    border: 2px solid #000;
+                    padding: 13px;
+
+                }
+            }
+
+        }
 
     }
     &__textinput {

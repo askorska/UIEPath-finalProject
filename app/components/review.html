@@ -1,39 +1,55 @@
 <div class="review">
-    <h2 class="review__header">Add Review</h2>
-    <div class="review__preview">
-        <div class="review__headline">By <span class="review__username">Your Name</span> <span
-            class="review__date"></span></div>
-        <div class="review__avatar"></div>
-        <div class="review__text"><span class="review__textPlaceholder">Start typing and your review text will appear here...</span></div>
+    <p class="review__intro">
+        There is no user reviews for now.
 
-    </div>
-    <div class="review__editor">
-        <div class="review__left">
-            <div class="form__group">
-                <label for="usernameInput">Enter your name</label>
-                <input id="usernameInput" type="text" class="form__input">
+        <span>Would you like to <span class="review__toggler">share your thoughts with other customers?</span></span>
+        <span>Share your thoughts with other customers:</span>
+    </p>
+    <div class="review__container u-is-hidden">
+        <h2 class="review__header">Add Review</h2>
+        <div class="review__preview">
+            <div class="review__headline">By <span class="review__username">Your Name</span> <span
+                class="review__date"></span>
+            <span class="review__ratingOutput starRating"></span>
             </div>
-            <div class="form__group">
-                <label for="avatarInput">Choose your avatar</label>
-                <input id="avatarInput" type="file" class="form__input">
+            <div class="review__avatar"><img class="review__avatarOutput"
+                                             src="../../assets/images/preview-placeholder.svg" alt=""></div>
+            <div class="review__text"><span class="review__textPlaceholder">Start typing and your review text will appear here...</span>
             </div>
 
         </div>
-        <div class="review__right">
-            <h5>Write your review</h5>
-
-            <div class="review__textinput" contenteditable="true"></div>
-            <div class="review__buttons">
-                <div class="review__buttonsEditorial">
-                    <button class="button button--secondary" data-command="bold">Bold</button>
-                    <button class="button button--secondary" data-command="italic">Emphasize</button>
-                    <button class="button button--secondary" data-command="blockquote">Quote</button>
+        <form class="review__editor">
+            <div class="review__legend"><span>Edit your review</span></div>
+            <div class="review__left">
+                <div class="form__group">
+                    <label for="usernameInput">Enter your name</label>
+                    <input id="usernameInput" type="text" class="review_nameinput form__input">
                 </div>
-                <button class="button button--secondary">Cancel</button>
-                <button class="button button--primary">Add Review</button>
+                <div class="form__group">
+                    <label>Choose your avatar</label>
+
+                    <input id="avatarInput" type="file" class="review__avatarInput">
+                    <label for="avatarInput" class="">Image not selected <img class="review__inputImg is-empty"
+                                                                              src="../../assets/images/upload.svg"
+                                                                              alt=""></label>
+                </div>
 
             </div>
-        </div>
-    </div>
+            <div class="review__right">
+                <h5>Write your review  <span class="review__rate">Rate product: ${require('../components/starRating.html')}</span></h5>
 
+                <div class="review__textinput" contenteditable="true"></div>
+                <div class="review__buttons">
+                    <div class="review__buttonsEditorial">
+                        <button class="button button--secondary" data-command="bold">Bold</button>
+                        <button class="button button--secondary" data-command="italic">Emphasize</button>
+                        <button class="button button--secondary" data-command="blockquote">Quote</button>
+                    </div>
+                    <button class="button button--secondary review__cancel">Cancel</button>
+                    <button class="button button--primary">Add Review</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

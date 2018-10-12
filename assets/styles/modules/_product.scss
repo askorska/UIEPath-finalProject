@@ -8,87 +8,77 @@
 
     }
     &__rate {
-        background-color: rgba(0,0,0,0.75);
+        background-color: rgba(0, 0, 0, 0.75);
         box-sizing: border-box;
         bottom: 0;
         height: 30px;
-        padding: 0 15px;
+        padding: 5px 15px;
         position: absolute;
         width: 100%;
         font-size: 0;
-        pointer-events:none;
+        pointer-events: none;
+    }
 
-        span {
-            display: inline-block;
-            height: 17px;
-            width: 17px;
-            background: url(../images/star-inactive.svg) top left / cover no-repeat;
-            background-size: cover;
-            margin: 5px 0 0 3px;
 
-            &.is-filled {
-                background: url(../images/star-active.svg) top left / cover no-repeat;
-            }
+&__details {
+    padding: 20px;
+    display: grid;
+    grid-template-rows: 1fr auto;
 
+    p {
+        margin-bottom: 16px;
+
+        & > a {
+            color: #1B745F
         }
     }
 
-    &__details {
-        padding: 20px;
-        display: grid;
-        grid-template-rows: 1fr auto;
+}
 
-        p {
-            margin-bottom: 16px;
+&__header {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 23px;
+    border-bottom: 2px solid #3FC5CB;
+    padding-bottom: 6px;
+    margin-bottom: 9px;
+}
 
-            & > a {
-                color: #1B745F
-            }
-        }
+&__bottomline {
+    overflow: hidden;
+    margin-top: 35px;
 
+}
+
+&__price {
+    font-size: 24px;
+    line-height: 120%;
+    float: left;
+
+}
+
+&__currency {
+    color: #288575;
+}
+
+&__amount {
+    font-size: 16px;
+}
+
+&__button {
+    float: right;
+}
+
+&--listed {
+    .product__description {
+        font-size: 14px;
     }
+}
 
-    &__header {
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 23px;
-        border-bottom: 2px solid #3FC5CB;
-        padding-bottom: 6px;
-        margin-bottom: 9px;
-    }
+&--single {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+}
 
-    &__bottomline {
-        overflow: hidden;
-        margin-top: 35px;
-
-    }
-
-    &__price {
-        font-size: 24px;
-        line-height: 120%;
-        float: left;
-
-    }
-    &__currency {
-        color: #288575;
-    }
-    &__amount {
-        font-size: 16px;
-    }
-
-    &__button {
-        float: right;
-    }
-
-    &--listed {
-        .product__description {
-            font-size: 14px;
-        }
-    }
-
-    &--single {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 30px;
-    }
 }

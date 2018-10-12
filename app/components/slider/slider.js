@@ -22,7 +22,7 @@ class Slider {
 
     addZoom() {
         let img = this.getCurrImg();
-        img.onload = ()=> {
+        img.onload = () => {
             this.zoom = new Zoom(img, 75, this.parent);
             this.zoom.init();
         }
