@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>Demo Shop</title>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 
 </head>
@@ -12,8 +12,10 @@
     ${require('../components/header.html')}
     <div class="content">
         <div class="container container--pagecontent">
-
+            ${require('../components/breadcrumbs.html')}
             ${require('../components/product-slider.html')}
+            ${require('../components/review.html')}
+
         </div>
     </div>
     ${require('../components/footer.html')}

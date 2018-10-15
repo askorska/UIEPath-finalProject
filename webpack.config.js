@@ -41,6 +41,12 @@ module.exports = {
         }),
 
         new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: path.join(__dirname, 'app/pages/product-slider.html'),
+            title: appHtmlTitle
+        }),
+
+        new HtmlWebpackPlugin({
             filename: 'main.html',
             template: path.join(__dirname, 'app/pages/main.html'),
             title: appHtmlTitle
@@ -56,16 +62,6 @@ module.exports = {
             template: path.join(__dirname, 'app/pages/product-slider.html'),
             title: appHtmlTitle
         }),
-
-        new HtmlWebpackPlugin({
-            filename: 'product-review.html',
-            template: path.join(__dirname, 'app/pages/product-review.html'),
-            title: appHtmlTitle
-        })
-
-
-
-
 
     ],
     module: {

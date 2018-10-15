@@ -8,11 +8,10 @@ import 'styles/index.scss';
 // ================================
 // START YOUR APP HERE
 // ===============================
-import Slider from 'components/slider/slider'
-import Rangeable from 'rangeable'
-import addComment from 'components/addComent/addComment'
-import visibility from 'components/visibilityToggler/visibilityToggler'
-import Rating from 'components/addComent/rating'
+import Slider from 'components/slider/slider';
+import Rangeable from 'rangeable';
+import addComment from 'components/addComent/addComment';
+import visibility from 'components/visibilityToggler/visibilityToggler';
 
 if (document.querySelector('#range1')) {
     const rangeable = new Rangeable('#range1', {

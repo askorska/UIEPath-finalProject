@@ -1,5 +1,5 @@
-import Zoom from 'components/slider/zoom'
-import Watermark from 'components/slider/watermark'
+import Zoom from 'components/slider/zoom';
+import Watermark from 'components/slider/watermark';
 class Slider {
 
     constructor(containerSelector, startAt = 0) {
@@ -25,7 +25,7 @@ class Slider {
         img.onload = () => {
             this.zoom = new Zoom(img, 75, this.parent);
             this.zoom.init();
-        }
+        };
 
     }
 
@@ -49,7 +49,7 @@ class Slider {
         }
 
         else if (this.currentSlideIndex < 0) {
-            this.currentSlideIndex = this.slides.length - 2
+            this.currentSlideIndex = this.slides.length - 2;
         }
         this.setCurrSlide(this.currentSlideIndex);
         this.zoom.updateImg(this.getCurrImg());

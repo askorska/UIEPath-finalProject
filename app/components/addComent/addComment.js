@@ -1,4 +1,4 @@
-import visibility from 'components/visibilityToggler/visibilityToggler'
+import visibility from 'components/visibilityToggler/visibilityToggler';
 import Rating from "./rating";
 
 class AddComment {
@@ -16,12 +16,13 @@ class AddComment {
     addEvents() {
         let buttons = this.container.querySelector('.review__buttonsEditorial').children;
         for (let i = 0; i < buttons.length; i++) {
-            buttons[i].addEventListener('click', () => {
+            buttons[i].addEventListener('click', (e) => {
+                e.preventDefault();
                 this.btnOnClick(buttons[i]);
             });
         }
         this.inputContainer.addEventListener('keyup', () => {
-            this.updatePreview()
+            this.updatePreview();
         });
         this.inputContainer.addEventListener('paste', (e) => {
             e.preventDefault();
@@ -35,7 +36,8 @@ class AddComment {
         this.avatarInput.addEventListener('change', (e) => {
             this.updateImg(e);
         });
-        document.querySelector('.review__cancel').addEventListener('click', () => {
+        document.querySelector('.review__cancel').addEventListener('click', (e) => {
+            e.preventDefault();
             visibility.hide(this.container);
             visibility.show(document.querySelector('.review__toggler').parentElement);
 
@@ -79,14 +81,13 @@ class AddComment {
         }
     }
 
-    btnOnClick(e) {
-
-        if (e.dataset.command === 'blockquote') {
-            document.execCommand('formatBlock', false, e.dataset.command);
+    btnOnClick(el) {
+        if (el.dataset.command === 'blockquote') {
+            document.execCommand('formatBlock', false, el.dataset.command);
         }
 
         else {
-            document.execCommand(e.dataset.command, false, null);
+            document.execCommand(el.dataset.command, false, null);
         }
 
         this.updatePreview();

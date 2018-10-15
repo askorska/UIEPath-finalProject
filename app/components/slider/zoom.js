@@ -19,7 +19,6 @@ class Zoom {
 
     moveLens(e, el) {
         let a = el.getBoundingClientRect();
-        console.log(a);
         let x = e.pageX - a.left;
         let y = e.pageY - a.top;
         x = x - window.pageXOffset;
@@ -52,7 +51,7 @@ class Zoom {
         this.cy = this.result.offsetHeight / this.lens.offsetHeight;
         this.result.style.backgroundSize = (this.container.offsetWidth * this.cx) + "px " + (this.container.offsetHeight * this.cy) + "px";
         this.img.addEventListener('mousemove', (e) => {
-            this.moveLens(e, this.img)
+            this.moveLens(e, this.img);
         });
 
     }

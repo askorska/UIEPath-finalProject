@@ -15,8 +15,7 @@ class Watermark {
             ctx.globalAlpha = 0.8;
             ctx.fillText("DEMO SHOP", canvas.width - 280, 60);
             srcImg.src = canvas.toDataURL('image/jpeg', 0.9);
-
-        }
+        };
 
     }
 

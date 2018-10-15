@@ -12,7 +12,10 @@ module.exports = merge(webpackConfig, {
     },
 
     devServer: {
-        host: '0.0.0.0'
+        host: '0.0.0.0',
+        historyApiFallback: {
+            index: 'product.html'
+        }
     }
 
 });
