@@ -63,6 +63,12 @@ module.exports = {
             title: appHtmlTitle
         }),
 
+        new HtmlWebpackPlugin({
+            filename: 'login.html',
+            template: path.join(__dirname, 'app/pages/login.html'),
+            title: appHtmlTitle
+        }),
+
     ],
     module: {
         rules: [

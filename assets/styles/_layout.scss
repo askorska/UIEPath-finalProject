@@ -3,14 +3,16 @@ html, body {
     height: 100%;
 }
 
-body {
-    background: url("../images/bg.jpg");
-}
 .wrapper {
     min-height: 100%;
     display: grid;
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 100%;
+    background: url("../images/bg.jpg");
+
+    &.has-modal {
+      filter: blur(1.5px);
+    }
 
 }
 
@@ -21,7 +23,7 @@ body {
 
 }
 .container--pagecontent {
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0,0,0,0.35);
     height: 100%;
 
 }

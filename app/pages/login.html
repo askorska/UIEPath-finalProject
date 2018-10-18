@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrapper has-modal">
+    ${require('../components/header.html')}
+    <div class="content">
+    </div>
+    ${require('../components/footer.html')}
+</div>
+<div class="modal__overlay">
+    <div class="modal__container">
+        <h3 class="modal__header">Login to “Demo Shop”</h3>
+        <div class="modal__body">
+            <form action="" class="login">
+                <div class="form__group">
+                    <label class="form__label" for="login">Your login:</label>
+                    <input class="form__input login__input login__input--name" type="text" name="login" id="login"
+                           required placeholder=" " pattern="[A-Za-z]{3,7}">
+                </div>
+                <div class="form__group">
+                    <label class="form__label" for="password">Your password:</label>
+                    <input class="form__input login__input login__input--password" type="password" id="password"
+                           name="password" required placeholder=" " pattern=".{3,}">
+                </div>
+                <div class="modal__buttons">
+                    <button class="button button--primary button--large" type="submit">Submit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
