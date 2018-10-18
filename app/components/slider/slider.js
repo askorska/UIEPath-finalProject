@@ -1,13 +1,20 @@
 import Zoom from 'components/slider/zoom';
 import Watermark from 'components/slider/watermark';
-class Slider {
 
+class Slider {
     constructor(containerSelector, startAt = 0) {
         this.parent = document.querySelector(containerSelector);
         this.container = this.parent.children[0];
         this.parent.classList.add('slider__parent');
         this.currentSlideIndex = startAt;
+    }
 
+    init() {
+        this.makeSlides();
+        this.setCurrSlide(this.currentSlideIndex);
+        this.makeControl("a", "slider__next", 1);
+        this.makeControl("a", "slider__prev", -1);
+        this.addZoom();
     }
 
     makeSlides() {
@@ -17,7 +24,6 @@ class Slider {
             this.slides[i].classList.add("slide");
             watermark.addWatermark(this.slides[i].firstElementChild);
         }
-
     }
 
     addZoom() {
@@ -26,7 +32,6 @@ class Slider {
             this.zoom = new Zoom(img, 75, this.parent);
             this.zoom.init();
         };
-
     }
 
     setCurrSlide(index) {
@@ -43,18 +48,13 @@ class Slider {
 
     changeCurrSlide(num) {
         this.currentSlideIndex += num;
-
         if (this.currentSlideIndex > this.slides.length - 1) {
             this.currentSlideIndex = 0;
-        }
-
-        else if (this.currentSlideIndex < 0) {
+        } else if (this.currentSlideIndex < 0) {
             this.currentSlideIndex = this.slides.length - 2;
         }
         this.setCurrSlide(this.currentSlideIndex);
         this.zoom.updateImg(this.getCurrImg());
-
-
     }
 
     makeControl(tagName, className, step) {
@@ -65,15 +65,6 @@ class Slider {
             this.changeCurrSlide(step);
         });
     }
-
-    init() {
-        this.makeSlides();
-        this.setCurrSlide(this.currentSlideIndex);
-        this.makeControl("a", "slider__next", 1);
-        this.makeControl("a", "slider__prev", -1);
-        this.addZoom();
-    }
-
 }
 
 export default Slider;

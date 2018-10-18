@@ -4,29 +4,29 @@
     line-height: 0;
     vertical-align: middle;
 
-    span {
+    &__star {
         background-image: url(../images/star-inactive.svg);
-        background-repeat: no-repeat;
         background-position: left top;
+        background-repeat: no-repeat;
         background-size: 18px;
         display: inline-block;
         height: 22px;
         width: 22px;
 
-        &.is-filled {
+        &--filled {
             background-image: url(../images/star-active.svg);
         }
     }
 
-    &.is-clickable {
+    &--clickable {
         cursor: pointer;
         pointer-events: auto;
 
-        &:hover span {
+        &:hover .starRating__star {
             background-image: url(../images/star-active.svg);
         }
 
-        span:hover ~ span {
+        span:hover ~ .starRating__star {
             background-image: url(../images/star-inactive.svg);
         }
 

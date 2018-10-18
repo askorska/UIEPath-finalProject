@@ -2,15 +2,20 @@ import visibility from 'components/visibilityToggler/visibilityToggler';
 import Rating from "./rating";
 
 class AddComment {
-
-    constructor(element) {
-        this.container = document.querySelector(element);
+    constructor(containerSelector) {
+        this.container = document.querySelector(containerSelector);
         this.inputContainer = this.container.querySelector('.review__textinput');
         this.outputContainer = this.container.querySelector('.review__text');
         this.usernameInput = this.container.querySelector('.review_nameinput');
         this.usernameOutput = this.container.querySelector('.review__username');
         this.avatarInput = this.container.querySelector('.review__avatarInput');
         this.avatarOutput = this.container.querySelector('.review__avatarOutput');
+    }
+
+    init() {
+        this.addEvents();
+        this.addDate();
+        this.addRating();
     }
 
     addEvents() {
@@ -28,7 +33,6 @@ class AddComment {
             e.preventDefault();
             let text = e.clipboardData.getData('text/plain');
             document.execCommand('insertHTML', false, text);
-
         });
         this.usernameInput.addEventListener('keyup', (e) => {
             this.usernameOutput.innerHTML = e.target.value;
@@ -40,9 +44,7 @@ class AddComment {
             e.preventDefault();
             visibility.hide(this.container);
             visibility.show(document.querySelector('.review__toggler').parentElement);
-
         });
-
     }
 
     addRating() {
@@ -50,7 +52,7 @@ class AddComment {
         let reviewRatingOutput = this.container.querySelector('.review__ratingOutput');
         reviewRating.makeClickable();
         reviewRating.rating.addEventListener('rateChange', function () {
-           reviewRatingOutput.innerHTML = reviewRating.rating.innerHTML;
+            reviewRatingOutput.innerHTML = reviewRating.rating.innerHTML;
         }, false);
     }
 
@@ -60,13 +62,10 @@ class AddComment {
         let dateEl = this.container.querySelector('.review__date');
         date = date.toLocaleString(locale, {month: 'long', day: '2-digit', year: 'numeric'});
         dateEl.innerHTML = date;
-
     }
 
     updatePreview() {
-
         this.outputContainer.innerHTML = this.inputContainer.innerHTML;
-
     }
 
     updateImg(e) {
@@ -84,19 +83,10 @@ class AddComment {
     btnOnClick(el) {
         if (el.dataset.command === 'blockquote') {
             document.execCommand('formatBlock', false, el.dataset.command);
-        }
-
-        else {
+        } else {
             document.execCommand(el.dataset.command, false, null);
         }
-
         this.updatePreview();
-    }
-
-    init() {
-        this.addEvents();
-        this.addDate();
-        this.addRating();
     }
 
 }

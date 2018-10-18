@@ -28,9 +28,17 @@
         right: -300px;
         top: 0;
         visibility: hidden;
+        @media (max-width: $breakpoint-medium) {
+            right: auto;
+            bottom: -270px;
+            top: auto;
+
+        }
+
         :hover > & {
             visibility: visible;
         }
+
 
     }
 

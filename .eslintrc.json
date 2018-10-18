@@ -52,9 +52,10 @@
         "require-yield": 2,
         "use-isnan": 2,
         "valid-typeof": 2,
-        "no-multiple-empty-lines": 2,
+        "no-multiple-empty-lines": ["warn", { "max": 1, "maxBOF": 0 }],
         "semi": "warn",
-        "no-console": 1
+        "no-console": 1,
+        "brace-style": 2
 
 },
     "env": {

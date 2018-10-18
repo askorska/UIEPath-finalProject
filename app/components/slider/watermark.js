@@ -3,7 +3,6 @@ class Watermark {
     addWatermark(srcImg) {
         let img = new Image();
         img.src = srcImg.src;
-
         img.onload = () => {
             let w = img.width;
             let h = img.height;
